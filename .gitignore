@@ -1,0 +1,10 @@
+# Bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# pytest cache
+.pytest_cache/
+
+# VS Code settings (optional)
+.vscode/
