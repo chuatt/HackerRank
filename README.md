@@ -1,4 +1,5 @@
 # HackerRank Solutions
+![Tests](https://github.com/chuatt/HackerRank/actions/workflows/tests.yml/badge.svg)
 
 Welcome! This repository is where I keep my solutions to various HackerRank challenges. Instead of treating this like a code dump, I’m using it as a place to show how I think, how I write code, and how I approach problems.
 
