@@ -15,22 +15,20 @@ Use conditional checks based on the rules above.
 
 Constraints:
 1 ≤ n ≤ 100
-
-This file is written in a clean, modular structure for GitLab portfolio or testing.
 """
+
 
 def weird_or_not(n: int) -> str:
     """Return whether n is Weird or Not Weird based on rules."""
     if n % 2 != 0:
         return "Weird"
-    elif 2 <= n <= 5:
+    if 2 <= n <= 5:
         return "Not Weird"
-    elif 6 <= n <= 20:
+    if 6 <= n <= 20:
         return "Weird"
-    else:
-        return "Not Weird"
+    return "Not Weird"
 
 
 if __name__ == "__main__":
-    n = int(input().strip())
-    print(weird_or_not(n))
+    value = int(input().strip())
+    print(weird_or_not(value))

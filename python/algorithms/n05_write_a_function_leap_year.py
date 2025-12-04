@@ -1,30 +1,27 @@
 """
 Problem: Write a Function (Leap Year)
 Platform: HackerRank
-Link: https://www.hackerrank.com/challenges/write-a-function
+Link: https://www.hackerrank.com/challenges/write-a-function/problem
 
 Summary:
-Determine whether a given year is a leap year in the Gregorian calendar.
+A year is a leap year if:
+- It is divisible by 4
+  - except divisible by 100
+    - unless also divisible by 400
 
-Leap year rules:
-1. The year is evenly divisible by 4
-2. Except years divisible by 100 (not leap years)
-3. Except years divisible by 400 (leap years)
-
-Examples:
-- 2000 → leap year   (divisible by 400)
-- 1900 → not leap    (divisible by 100 but not 400)
-- 1996 → leap year   (divisible by 4 and not 100)
-- 1990 → not leap    (not divisible by 4)
+Approach:
+Apply the Gregorian leap-year rules in order:
+1. Check divisible by 400
+2. Check divisible by 100
+3. Check divisible by 4
 
 Constraints:
 1900 ≤ year ≤ 10^5
-
-This file maintains the same clean structure and readability for GitHub portfolio purposes.
 """
 
+
 def is_leap(year: int) -> bool:
-    """Return True if the given year is a leap year, else False."""
+    """Return True if the given year is a leap year."""
     if year % 400 == 0:
         return True
     if year % 100 == 0:
@@ -35,5 +32,5 @@ def is_leap(year: int) -> bool:
 
 
 if __name__ == "__main__":
-    year = int(input())
-    print(is_leap(year))
+    year_value = int(input().strip())
+    print(is_leap(year_value))
