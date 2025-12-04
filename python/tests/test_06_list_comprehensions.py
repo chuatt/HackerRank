@@ -5,18 +5,13 @@ def test_small_example():
     x, y, z, n = 1, 1, 2, 3
     result = valid_coordinates(x, y, z, n)
 
+    # Expected based on the problem specification, not hard-coded by hand
     expected = [
-        [0, 0, 0],
-        [0, 0, 1],
-        [0, 0, 2],
-        [0, 1, 0],
-        [0, 1, 1],
-        [0, 1, 2],
-        [1, 0, 0],
-        [1, 0, 1],
-        [1, 0, 2],
-        [1, 1, 0],
-        [1, 1, 2],
+        [i, j, k]
+        for i in range(x + 1)
+        for j in range(y + 1)
+        for k in range(z + 1)
+        if i + j + k != n
     ]
 
     assert result == expected
@@ -28,14 +23,11 @@ def test_no_exclusions():
     result = valid_coordinates(x, y, z, n)
 
     expected = [
-        [0, 0, 0],
-        [0, 0, 1],
-        [0, 1, 0],
-        [0, 1, 1],
-        [1, 0, 0],
-        [1, 0, 1],
-        [1, 1, 0],
-        [1, 1, 1],
+        [i, j, k]
+        for i in range(x + 1)
+        for j in range(y + 1)
+        for k in range(z + 1)
+        if i + j + k != n
     ]
 
     assert result == expected
@@ -45,13 +37,12 @@ def test_exclude_middle_values():
     x, y, z, n = 2, 2, 2, 3
     result = valid_coordinates(x, y, z, n)
 
-    # brute-force recompute valid expected values
     expected = [
         [i, j, k]
-        for i in range(3)
-        for j in range(3)
-        for k in range(3)
-        if i + j + k != 3
+        for i in range(x + 1)
+        for j in range(y + 1)
+        for k in range(z + 1)
+        if i + j + k != n
     ]
 
     assert result == expected
@@ -62,13 +53,11 @@ def test_single_dimension_zero():
     result = valid_coordinates(x, y, z, n)
 
     expected = [
-        [0, 0, 0],
-        [0, 0, 1],
-        [0, 1, 0],
-        [0, 1, 1],
+        [i, j, k]
+        for i in range(x + 1)
+        for j in range(y + 1)
+        for k in range(z + 1)
+        if i + j + k != n
     ]
-
-    # Remove elements where sum == 1
-    expected = [item for item in expected if sum(item) != 1]
 
     assert result == expected
