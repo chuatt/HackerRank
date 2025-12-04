@@ -2,18 +2,21 @@ from python.algorithms.n06_list_comprehensions import valid_coordinates
 
 
 def test_small_example():
-    # Example from the problem statement
     x, y, z, n = 1, 1, 2, 3
     result = valid_coordinates(x, y, z, n)
 
     expected = [
         [0, 0, 0],
         [0, 0, 1],
+        [0, 0, 2],
         [0, 1, 0],
         [0, 1, 1],
+        [0, 1, 2],
         [1, 0, 0],
         [1, 0, 1],
+        [1, 0, 2],
         [1, 1, 0],
+        [1, 1, 2],
     ]
 
     assert result == expected
