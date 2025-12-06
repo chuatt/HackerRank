@@ -7,8 +7,8 @@ Link:
 https://www.hackerrank.com/challenges/nested-list/problem
 
 Summary:
-Given N students with their names and grades, print the name(s) of the student(s)
-having the second lowest grade.
+Given N students with their names and grades, print the name(s) of 
+the student(s) having the second lowest grade.
 
 If more than one student has the second lowest grade, print all such names in
 alphabetical order.
