@@ -5,9 +5,9 @@ Link:
 https://www.hackerrank.com/challenges/finding-the-percentage/problem
 
 Summary:
-You are given student records consisting of a name and three marks. After reading
-n such records, you must compute and print the average of the marks for a
-requested student, formatted to 2 decimal places.
+You are given student records consisting of a name and three marks. After
+ reading n such records, you must compute and print the average of the marks
+ for a requested student, formatted to 2 decimal places.
 
 Example:
 Records:
