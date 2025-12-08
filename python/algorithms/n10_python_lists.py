@@ -39,7 +39,7 @@ Constraints:
 
 
 def process_commands(commands: list[str]) -> list[list[int]]:
-    """Execute HackerRank-style list commands and return outputs for `print`."""
+    """Execute list commands and return outputs for print."""
     arr: list[int] = []
     outputs: list[list[int]] = []
 
