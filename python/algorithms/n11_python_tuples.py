@@ -27,7 +27,7 @@ Constraints:
 
 
 def tuple_hash(values: list[int]) -> int:
-    """Return the hash of the given list of integers by converting it to a tuple."""
+    """Return the hash of the list of integers by converting it to a tuple."""
     return hash(tuple(values))
 
 
