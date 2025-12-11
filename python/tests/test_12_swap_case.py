@@ -1,5 +1,5 @@
 """
-Unit tests for n11_swap_case.py
+Unit tests for n12_swap_case.py
 
 Tests the swap_case(s) function to ensure:
 - Lowercase → uppercase
@@ -9,7 +9,7 @@ Tests the swap_case(s) function to ensure:
 - Edge cases (empty string, only symbols, long strings)
 """
 
-from python.algorithms.n11_swap_case import swap_case
+from python.algorithms.n12_swap_case import swap_case
 
 
 def test_basic_example():
