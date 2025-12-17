@@ -1,4 +1,4 @@
-from python.strings.n17_string_validators import string_validators
+from python.algorithms.n17_string_validators import string_validators
 
 
 def test_mixed_characters():
