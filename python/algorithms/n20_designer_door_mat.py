@@ -22,8 +22,14 @@ Constraints:
 """
 
 
-def print_designer_door_mat(n: int, m: int) -> None:
-    """Print the Designer Door Mat pattern."""
+def print_door_mat(n: int, m: int) -> None:
+    """
+    Print the designer door mat pattern.
+
+    Args:
+        n (int): Number of rows (odd)
+        m (int): Number of columns (3 * n)
+    """
     # Top half
     for i in range(n // 2):
         pattern = ".|." * (2 * i + 1)
@@ -40,4 +46,4 @@ def print_designer_door_mat(n: int, m: int) -> None:
 
 if __name__ == "__main__":
     n, m = map(int, input().split())
-    print_designer_door_mat(n, m)
+    print_door_mat(n, m)
