@@ -47,3 +47,4 @@ def print_door_mat(n: int, m: int) -> None:
 if __name__ == "__main__":
     n, m = map(int, input().split())
     print_door_mat(n, m)
+    

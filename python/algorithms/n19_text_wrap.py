@@ -38,6 +38,11 @@ def wrap(string: str, max_width: int) -> str:
     return textwrap.fill(string, width=max_width)
 
 
+def wrap_text(string: str, max_width: int) -> str:
+    """Alias for tests: same behavior as wrap()."""
+    return wrap(string, max_width)
+
+
 if __name__ == "__main__":
     s = input().rstrip("\n")
     width = int(input().strip())
