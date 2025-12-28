@@ -31,7 +31,7 @@ from __future__ import annotations
 
 import string
 
-def print_rangoli(size: int) -> str:
+def alphabet_rangoli(size: int) -> str:
     """
     Return the alphabet rangoli as a single string with newline separators.
 
@@ -42,25 +42,29 @@ def print_rangoli(size: int) -> str:
         Rangoli string with newline characters.
     """
     letters = string.ascii_lowercase
-    total_width = 4 * size - 3
-    lines:list[str] = []
+    width = 4 * size - 3
 
+    lines: list[str] = []
+
+    # Top half (including center line)
     for i in range(size - 1, -1, -1):
-        left_part = letters[size - 1 : i : -1]
-        right_part = letters[i : size]
-        row_letters = left_part + right_part
-        row = '-'.join(row_letters).center(total_width, '-')
-        lines.append(row)
+        left = letters[size - 1 : i : -1]
+        right = letters[i:size]
+        row = "-".join(left + right)
+        lines.append(row.center(width, "-"))
 
-    # Mirror the top half to create the bottom half
-    full_rangoli = lines + lines[-2::-1]
-    return '\n'.join(full_rangoli)
+    # Bottom half (mirror, excluding center line)
+    lines.extend(lines[-2::-1])
+
+    return "\n".join(lines)
+
 
 def print_rangoli(size: int) -> None:
-    """Print the alphabet rangoli of given size."""
+    """Print the alphabet rangoli (HackerRank expects printing)."""
     print(alphabet_rangoli(size))
 
 
 if __name__ == "__main__":
     n = int(input().strip())
     print_rangoli(n)
+    
