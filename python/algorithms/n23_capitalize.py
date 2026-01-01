@@ -1,48 +1,45 @@
-# python/algorithms/n23_capitalize.py
 """
 Problem: Capitalize!
-
 Platform: HackerRank
-
-Link:
-https://www.hackerrank.com/challenges/capitalize/problem
+Link: https://www.hackerrank.com/challenges/capitalize/problem?isFullScreen=true
 
 Summary:
-Given a full name string S containing alphanumeric characters and spaces, capitalize
-the first character of each word while preserving all original spacing and leaving
-the rest of each word unchanged.
+Given a string containing alphanumeric characters and spaces, capitalize the first
+character of each word while preserving all spaces exactly as-is.
 
 Example:
-Input:
-alison heck
-Output:
-Alison Heck
+Input:  "  chris   alan  "
+Output: "  Chris   Alan  "
 
 Approach:
-Walk through the string character-by-character. If a character is at the start of
-the string or immediately follows a space, convert it to uppercase; otherwise keep
-it unchanged. This preserves multiple spaces exactly and matches the rule that only
-the first character of each word is capitalized.
+Scan the string character-by-character.
+Capitalize a character if it is alphabetic AND either:
+- it is the first character of the string, or
+- the previous character is a space.
+All other characters are kept unchanged, which preserves spacing and ensures
+alphanumeric words like "12abc" remain "12abc".
 """
 
 
-def solve(s: str) -> None:
+def solve(s):
     """
-    Print the capitalized version of s, preserving spacing exactly.
+    Print the capitalized version of string s (spaces preserved).
+
+    Args:
+        s (str): Input string containing alphanumeric characters and spaces.
     """
     if not s:
-        print("")
+        print()
         return
 
-    chars = []
-    for i, ch in enumerate(s):
-        if i == 0 or s[i - 1] == " ":
-            chars.append(ch.upper())
+    out_chars = []
+    prev_is_space = True
+
+    for ch in s:
+        if prev_is_space and ch.isalpha():
+            out_chars.append(ch.upper())
         else:
-            chars.append(ch)
+            out_chars.append(ch)
+        prev_is_space = (ch == " ")
 
-    print("".join(chars))
-
-
-if __name__ == "__main__":
-    solve(input())
+    print("".join(out_chars))
