@@ -40,7 +40,6 @@ Approach:
 from collections import Counter
 
 
-
 def solve() -> None:
     """
     Read input from stdin and print the total money earned.
@@ -59,7 +58,6 @@ def solve() -> None:
             inventory[size] -= 1
 
     print(total)
-
 
 
 if __name__ == "__main__":
